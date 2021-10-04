@@ -57,13 +57,13 @@ def crear_estudiante():
     estudiante = {}
     estudiante["name"] = (input("Ingrese el nombre del estudiante: ")).title()
     estudiante["age"] = int(input("Ingrese la edad del estudiante: "))
-    estudiante["grade"] = int(input("Ingrese el año en que se encuentra el estudiante: "))
+    estudiante["grade"] = input("Ingrese el año en que se encuentra el estudiante: ")
     estudiante["tutor"] = (input("Ingrese el tutor del estudiante: ")).title()
 
     if not estudiante["grade"]:
-        estudiante["grade"] = "NULL"
+        estudiante["grade"] = ""
     if not estudiante["tutor"]:
-        estudiante["tutor"] = "NULL"
+        estudiante["tutor"] = ""
     print("CREAR ESTUDIANTE:\n", estudiante)
     return estudiante
     
@@ -173,7 +173,7 @@ def insert(datos_estudiante:list=None):
                             continuar = True
                             estudiante["tutor"] = input("Ingrese el nombre del tutor: ")
                             if not estudiante["tutor"]:
-                                estudiante["tutor"] = "NULL"
+                                estudiante["tutor"] = ""
                         else:
                             estudiante["tutor"] = dato   
                             estudiante["name"] = input("CAMPO OBLIGATORIO. Ingrese el nombre del alumno: ")
@@ -193,7 +193,7 @@ def insert(datos_estudiante:list=None):
                             estudiante["age"] = dato 
                             estudiante["grade"] = input("Ingrese el año de curso del alumno: ")
                             if not estudiante["grade"]:
-                                estudiante["grade"] = "NULL"     
+                                estudiante["grade"] = ""     
                             continuar = True
                         else:
                             estudiante["age"] = None
